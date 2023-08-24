@@ -1,0 +1,22 @@
+<div class="container m-3">
+  <%= link_to "Back to lists", lists_path, class: "btn btn-primary"%>
+  <div class="d-flex justify-content-between mt-5">
+   <h2 class= ><%=@list.name%></h2>
+    <%= link_to "Add Movie", new_list_bookmark_path(@list), class: "btn btn-primary" %>
+
+
+  </div>
+
+  <div class="mt-2">
+
+    <ul class="list-group">
+      <% @list.bookmarks.each do |bookmark| %>
+        <li class="list-group-item d-flex justify-content-between align-items-center"><%= bookmark.movie.title %> <span> - </span> <%= bookmark.comment %>
+        <%= link_to "Delete", bookmark_path(bookmark), data: { turbo_method: :delete }, class: "btn btn-danger" %>
+        </li>
+      <% end %>
+    </ul>
+
+  </div>
+
+</div>
