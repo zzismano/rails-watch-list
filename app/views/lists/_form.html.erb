@@ -1,6 +1,7 @@
 <div class="container">
   <div class="form">
     <%= simple_form_for @list do |f| %>
+      <%= f.input :banner, as: :file %>
       <%= f.input :name %>
       <%= f.submit %>
     <% end %>
